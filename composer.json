@@ -17,7 +17,7 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "IvoRabushScalewest\\FirestoreEloquent\\": "src/"
+      "Scalewest\\FirestoreEloquent\\": "src/"
     },
     "files": [
       "src/helpers.php"
@@ -29,15 +29,15 @@
       "email": "ivo.rabush@scalewest.com"
     }
   ],
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
     "laravel": {
       "providers": [
-        "IvoRabushScalewest\\FirestoreEloquent\\Providers\\FModelProvider"
+        "Scalewest\\FirestoreEloquent\\Providers\\FModelProvider"
       ],
       "aliases": {
-        "FAuth": "IvoRabushScalewest\\FirestoreEloquent\\Auth\\FAuth"
+        "FAuth": "Scalewest\\FirestoreEloquent\\Auth\\FAuth"
       }
     }
   },
