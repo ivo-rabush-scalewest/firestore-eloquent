@@ -10,10 +10,10 @@
  * @method string getDefaultNamespace(string $rootNamespace) Get the default namespace for the class.
  * @method array getOptions() Get the console command options.
  *
- * @package Roddy\FirestoreEloquent\Firestore\Eloquent\traits
+ * @package Scalewest\FirestoreEloquent\Firestore\Eloquent\traits
  */
 
-namespace Roddy\FirestoreEloquent\Console\Commands;
+namespace Scalewest\FirestoreEloquent\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Input\InputOption;

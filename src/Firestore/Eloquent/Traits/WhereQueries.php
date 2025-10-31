@@ -1,8 +1,8 @@
 <?php
 
-namespace Roddy\FirestoreEloquent\Firestore\Eloquent\Traits;
+namespace Scalewest\FirestoreEloquent\Firestore\Eloquent\Traits;
 
-use Roddy\FirestoreEloquent\Firestore\Eloquent\FsFilters;
+use Scalewest\FirestoreEloquent\Firestore\Eloquent\FsFilters;
 use Carbon\Carbon;
 
 trait WhereQueries

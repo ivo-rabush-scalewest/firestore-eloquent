@@ -1,6 +1,6 @@
 <?php
 
-namespace Roddy\FirestoreEloquent\Firestore\Eloquent\Traits;
+namespace Scalewest\FirestoreEloquent\Firestore\Eloquent\Traits;
 
 trait OtherQueries
 {

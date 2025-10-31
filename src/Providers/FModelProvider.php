@@ -1,10 +1,10 @@
 <?php
 
-namespace Roddy\FirestoreEloquent\Providers;
+namespace Scalewest\FirestoreEloquent\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use Roddy\FirestoreEloquent\Console\Commands\MakeModel;
+use Scalewest\FirestoreEloquent\Console\Commands\MakeModel;
 
 class FModelProvider extends ServiceProvider
 {
@@ -15,8 +15,8 @@ class FModelProvider extends ServiceProvider
      */
     public function boot(\Illuminate\Routing\Router  $router, \Illuminate\Foundation\Http\Kernel $kernel)
     {
-        app('router')->aliasMiddleware('f.auth', \Roddy\FirestoreEloquent\Middleware\F_Authentication::class);
-        app('router')->aliasMiddleware('f.guest', \Roddy\FirestoreEloquent\Middleware\F_RedirectIfAuthenticated::class);
+        app('router')->aliasMiddleware('f.auth', \Scalewest\FirestoreEloquent\Middleware\F_Authentication::class);
+        app('router')->aliasMiddleware('f.guest', \Scalewest\FirestoreEloquent\Middleware\F_RedirectIfAuthenticated::class);
 
         $this->publishes([
             __DIR__ . '/../config/firebase.php' => config_path('firebase.php'),
@@ -51,14 +51,14 @@ class FModelProvider extends ServiceProvider
         ];
 
         $this->app->bind('fauth', function () {
-            return new \Roddy\FirestoreEloquent\Auth\FAuth();
+            return new \Scalewest\FirestoreEloquent\Auth\FAuth();
         });
 
         // Bind 'fmodel' to the service container to create a singleton instance of FModel
         // This allows accessing the FModel class through the service container or facade
         // The binding is used to resolve dependencies and create new instances when needed
         $this->app->bind('fmodel', function () {
-            return $this->app->make('\Roddy\FirestoreEloquent\Firestore\Eloquent\FModel');
+            return $this->app->make('\Scalewest\FirestoreEloquent\Firestore\Eloquent\FModel');
         });
     }
 }

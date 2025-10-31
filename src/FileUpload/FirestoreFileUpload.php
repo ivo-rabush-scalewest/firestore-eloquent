@@ -1,5 +1,5 @@
 <?php
-namespace Roddy\FirestoreEloquent\FileUpload;
+namespace Scalewest\FirestoreEloquent\FileUpload;
 
 use Illuminate\Http\UploadedFile;
 use Google\Cloud\Storage\StorageClient;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Roddy\FirestoreEloquent\Firestore\Eloquent;
+namespace Scalewest\FirestoreEloquent\Firestore\Eloquent;
 
-use Roddy\FirestoreEloquent\Firestore\Eloquent\Traits\{FHttpClient, FirstQueries, DataParser, GetAndAllQueries, WhereQueries, OtherQueries, AggregationQueries, PaginateQueries, CreateMethod};
+use Scalewest\FirestoreEloquent\Firestore\Eloquent\Traits\{FHttpClient, FirstQueries, DataParser, GetAndAllQueries, WhereQueries, OtherQueries, AggregationQueries, PaginateQueries, CreateMethod};
 use Illuminate\Support\Str;
 
 

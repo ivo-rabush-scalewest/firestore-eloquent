@@ -30,7 +30,7 @@ This package is a customized version of Laravel Eloquent designed for seamless i
 
 1. Install this package using composer
    ```bash
-    composer require roddy/firestore-eloquent
+    composer require ivo-rabush-scalewest/firestore-eloquent:dev-main
    ```
 2. Copy and paste this to your **.env** file and replace `your-project-id` with your project id.
 
@@ -40,7 +40,7 @@ This package is a customized version of Laravel Eloquent designed for seamless i
 
 3. Publish the package configuration using Artisan
    ```bash
-   php artisan vendor:publish --provider="Roddy\FirestoreEloquent\Providers\FModelProvider" --force
+   php artisan vendor:publish --provider="Scalewest\FirestoreEloquent\Providers\FModelProvider" --force
    ```
    You can locate the configuration file in **`config/firebase.php`**.
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Roddy\FirestoreEloquent\Firestore\Eloquent\Traits;
+namespace Scalewest\FirestoreEloquent\Firestore\Eloquent\Traits;
 
-use Roddy\FirestoreEloquent\Firestore\Relations\{FHasMany, FHasOne, FBelongsTo};
+use Scalewest\FirestoreEloquent\Firestore\Relations\{FHasMany, FHasOne, FBelongsTo};
 
 trait FRelations
 {

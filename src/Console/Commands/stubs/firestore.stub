@@ -2,7 +2,7 @@
 
 namespace {{ namespace }};
 
-use Roddy\FirestoreEloquent\Facade\FModel;
+use Scalewest\FirestoreEloquent\Facade\FModel;
 
 class {{ class }} extends FModel
 {

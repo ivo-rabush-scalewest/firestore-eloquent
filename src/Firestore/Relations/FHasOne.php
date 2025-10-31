@@ -1,8 +1,8 @@
 <?php
 
-namespace Roddy\FirestoreEloquent\Firestore\Relations;
+namespace Scalewest\FirestoreEloquent\Firestore\Relations;
 
-use Roddy\FirestoreEloquent\Facade\FModel;
+use Scalewest\FirestoreEloquent\Facade\FModel;
 
 trait FHasOne
 {

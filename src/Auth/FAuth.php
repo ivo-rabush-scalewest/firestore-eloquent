@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * @package Roddy\FirestoreEloquent\Firestore\Eloquent\traits
+ * @package Scalewest\FirestoreEloquent\Firestore\Eloquent\traits
  */
 
-namespace Roddy\FirestoreEloquent\Auth;
+namespace Scalewest\FirestoreEloquent\Auth;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;

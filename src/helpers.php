@@ -1,6 +1,6 @@
 <?php
 
-use Roddy\FirestoreEloquent\Auth\FAuth;
+use Scalewest\FirestoreEloquent\Auth\FAuth;
 
 /**
  * Get a new instance of FAuth.

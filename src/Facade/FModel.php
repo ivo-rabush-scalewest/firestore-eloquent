@@ -1,8 +1,8 @@
 <?php
 
-namespace Roddy\FirestoreEloquent\Facade;
+namespace Scalewest\FirestoreEloquent\Facade;
 
-use Roddy\FirestoreEloquent\Firestore\Eloquent\FClient;
+use Scalewest\FirestoreEloquent\Firestore\Eloquent\FClient;
 
 class FModel
 {

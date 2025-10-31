@@ -1,10 +1,10 @@
 <?php
 
-namespace Roddy\FirestoreEloquent\Firestore\Eloquent\Traits;
+namespace Scalewest\FirestoreEloquent\Firestore\Eloquent\Traits;
 
 use Carbon\Carbon;
 use Illuminate\Support\Str;
-use Roddy\FirestoreEloquent\Firestore\Eloquent\FsFilters;
+use Scalewest\FirestoreEloquent\Firestore\Eloquent\FsFilters;
 
 trait CreateMethod
 {

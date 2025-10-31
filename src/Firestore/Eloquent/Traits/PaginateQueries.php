@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Roddy\FirestoreEloquent\Firestore\Eloquent\Traits;
+namespace Scalewest\FirestoreEloquent\Firestore\Eloquent\Traits;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 

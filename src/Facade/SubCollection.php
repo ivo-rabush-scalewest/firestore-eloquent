@@ -1,8 +1,8 @@
 <?php
 
-namespace Roddy\FirestoreEloquent\Facade;
+namespace Scalewest\FirestoreEloquent\Facade;
 
-use Roddy\FirestoreEloquent\Firestore\Eloquent\SubCollectionMainController;
+use Scalewest\FirestoreEloquent\Firestore\Eloquent\SubCollectionMainController;
 
 /**
  * @method static SubCollections subCollection(string $value)

@@ -1,6 +1,6 @@
 <?php
 
-namespace Roddy\FirestoreEloquent\Firestore\Eloquent;
+namespace Scalewest\FirestoreEloquent\Firestore\Eloquent;
 
 use Carbon\Carbon;
 

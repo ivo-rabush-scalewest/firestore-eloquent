@@ -1,6 +1,6 @@
 <?php
 
-namespace Roddy\FirestoreEloquent\Middleware;
+namespace Scalewest\FirestoreEloquent\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
