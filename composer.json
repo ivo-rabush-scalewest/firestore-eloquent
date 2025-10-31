@@ -40,5 +40,11 @@
                 "FAuth": "Scalewest\\FirestoreEloquent\\Auth\\FAuth"
             }
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/ivo-rabush-scalewest/firestore-eloquent.git"
+        }
+    ]
 }
