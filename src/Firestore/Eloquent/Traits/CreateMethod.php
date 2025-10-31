@@ -23,7 +23,8 @@ trait CreateMethod
                     foreach ($this->default as $k => $v) {
                         if (!isset($data[$k]) && in_array($k, $this->required) && in_array($k, $this->fillable) && $v) {
                             $data[$k] = $v;
-                        } else if (isset($data[$k]) && in_array($k, $this->required) && in_array($k, $this->fillable) && !$v) {
+                        } elseif (isset($data[$k]) && in_array($k, $this->required) && in_array($k, $this->fillable) &&
+                                  !$v) {
                             $data[$k] = $v;
                         }
                     }
@@ -33,7 +34,8 @@ trait CreateMethod
                     if (count($this->fieldTypes) > 0) {
                         if (isset($this->fieldTypes[$key])) {
                             if ($this->checkTypeInCreate($value) !== $this->fieldTypes[$key]) {
-                                throw new \Exception('"' . $key . '" expect type ' . $this->fieldTypes[$key] . ' but got ' . $this->checkTypeInCreate($value) . '.', 1);
+                                throw new \Exception('"' . $key . '" expect type ' . $this->fieldTypes[$key] .
+                                                     ' but got ' . $this->checkTypeInCreate($value) . '.', 1);
                             }
                         }
                     }
@@ -55,14 +57,18 @@ trait CreateMethod
                 };
 
                 if (count($filteredData) > 0) {
-                    $id = str_replace('-', '', Str::uuid()) . str_replace('.', '', microtime(true));
+                    $id                              = str_replace('-', '', Str::uuid()) .
+                                                       str_replace('.', '', microtime(true));
                     $filteredData[$this->primaryKey] = $id;
-                    $final = $this->convertToFirestoreFormat($filteredData);
+                    $final                           = $this->convertToFirestoreFormat($filteredData);
                     $this->postRequest($this->collection, $final, true, false, false, '?documentId=' . $id);
+
                     return $filteredData;
                 }
             } else {
-                return throw new \Exception('Cannot create a new "' . $this->model . '" because fillable property in "' . $this->model . '" model is empty or undefined.', 1);
+                return throw new \Exception('Cannot create a new "' . $this->model .
+                                            '" because fillable property in "' . $this->model .
+                                            '" model is empty or undefined.', 1);
             }
         } catch (\Throwable $th) {
             throw new \Exception("Error creating document: " . $th->getMessage());
@@ -74,7 +80,7 @@ trait CreateMethod
         $convertedFields = [];
 
         foreach ($data as $key => $value) {
-            $convertedFields[$key] = $this->convertValue($value);
+            $convertedFields[$key] = $this->convertValue($key, $value);
         }
 
         return ["fields" => $convertedFields];
@@ -85,9 +91,14 @@ trait CreateMethod
         return gettype($value);
     }
 
-    private function convertValue($value)
+    private function convertValue($key, $value)
     {
-        if (is_null($value)) {
+
+        if (in_array($key, ['created_at', 'updated_at'])) {
+            if (FsFilters::isValidDateWithYearMonthDay($value)) {
+                return ["timestampValue" => Carbon::parse($value)->format('Y-m-d\TH:i:s.u\Z')];
+            }
+        } elseif (is_null($value)) {
             return ["nullValue" => null];
         } elseif (is_bool($value)) {
             return ["booleanValue" => $value];
@@ -96,14 +107,6 @@ trait CreateMethod
         } elseif (is_float($value)) {
             return ["doubleValue" => $value];
         } elseif (is_string($value)) {
-            return ["stringValue" => $value];
-            // Skip Delect Firestore timestamp format
-
-            // Detect Firestore timestamp format
-
-            if (FsFilters::isValidDateWithYearMonthDay($value)) {
-                return ["timestampValue" => Carbon::parse($value)->format('Y-m-d\TH:i:s.u\Z')];
-            }
             return ["stringValue" => $value];
         } elseif (is_array($value)) {
             // Check if it's an indexed array or associative
@@ -119,6 +122,7 @@ trait CreateMethod
                 foreach ($value as $k => $v) {
                     $mapFields[$k] = $this->convertValue($v);
                 }
+
                 return [
                     "mapValue" => [
                         "fields" => $mapFields,
@@ -126,6 +130,7 @@ trait CreateMethod
                 ];
             }
         }
+
         return null; // Fallback case
     }
 }
