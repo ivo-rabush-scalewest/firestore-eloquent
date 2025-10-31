@@ -80,6 +80,11 @@ trait CreateMethod
         return ["fields" => $convertedFields];
     }
 
+    private function checkTypeInCreate($value)
+    {
+        return gettype($value);
+    }
+
     private function convertValue($value)
     {
         if (is_null($value)) {
@@ -105,8 +110,8 @@ trait CreateMethod
             if (array_keys($value) === range(0, count($value) - 1)) {
                 return [
                     "arrayValue" => [
-                        "values" => array_map([$this, "convertValue"], $value)
-                    ]
+                        "values" => array_map([$this, "convertValue"], $value),
+                    ],
                 ];
             } else {
                 // Associative array -> mapValue
@@ -116,8 +121,8 @@ trait CreateMethod
                 }
                 return [
                     "mapValue" => [
-                        "fields" => $mapFields
-                    ]
+                        "fields" => $mapFields,
+                    ],
                 ];
             }
         }
