@@ -11,8 +11,7 @@
         "illuminate/session": "9.* || 10.* || 11.* || 12.*",
         "illuminate/config": "9.* || 10.* || 11.* || 12.*",
         "illuminate/filesystem": "9.* || 10.* || 11.* || 12.*",
-        "php": ">= 8.0",
-        "ivo-rabush-scalewest/firestore-eloquent": "dev-main"
+        "php": ">= 8.0"
     },
     "license": "MIT",
     "autoload": {
@@ -40,11 +39,5 @@
                 "FAuth": "Scalewest\\FirestoreEloquent\\Auth\\FAuth"
             }
         }
-    },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/ivo-rabush-scalewest/firestore-eloquent.git"
-        }
-    ]
+    }
 }
