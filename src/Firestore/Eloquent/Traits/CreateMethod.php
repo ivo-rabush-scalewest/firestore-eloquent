@@ -91,6 +91,9 @@ trait CreateMethod
         } elseif (is_float($value)) {
             return ["doubleValue" => $value];
         } elseif (is_string($value)) {
+            return ["stringValue" => $value];
+            // Skip Delect Firestore timestamp format
+
             // Detect Firestore timestamp format
 
             if (FsFilters::isValidDateWithYearMonthDay($value)) {
