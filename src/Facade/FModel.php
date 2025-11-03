@@ -31,7 +31,7 @@ class FModel
          * Check if FIREBASE_PROJECT_ID is set in .env file or config file.
          * If not set, throw an exception.
          */
-        if (!config('firebase.projects.app.project_id', env('FIREBASE_PROJECT_ID'))) {
+        if (!config('firebase.projects.app.database.project_id', env('FIREBASE_PROJECT_ID'))) {
             throw new \Exception("FIREBASE_PROJECT_ID not set in .env file.");
         }
 
